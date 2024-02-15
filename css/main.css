@@ -1,0 +1,1120 @@
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+:root {
+
+    --main-font: 'Amatic SC', sans-serif;
+    --second-font: 'Inter', sans-serif;
+    --main-bg : #EEEEEE;
+    --main-color: rgb(0, 0, 0);
+    --box-mcolor: hsl(0, 84%, 49%) ; 
+    --content-main-color : #fff; 
+    --all-color: #7f7f90;
+    --hover: hsl(0, 73%, 55%);
+    
+    
+
+}
+
+:root:has(.mode:checked)
+{
+    --main-bg:#252525;
+    --main-color: #fff;
+    --box-mcolor:hsl(35, 72%, 44%);
+    --content-main-color: black;
+    --hover : hsl(35, 73%, 50%);
+}
+
+::selection {
+    background-color: var(--box-mcolor);
+    color: var(--main-color);
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+
+.all {
+    width: fit-content;
+    margin:  auto;
+    text-align: center;
+    padding-bottom: 3rem;
+
+}
+
+.word {
+    color: var(--all-color);
+    font-family: var(--second-font);
+}
+
+h3 span {
+    color: var(--box-mcolor);
+}
+
+h3 {
+    font-family: var(--main-font);
+    padding-top: .5rem;
+    font-size: 3rem;
+    font-weight: 400;
+    color: var(--main-color);
+}
+
+
+/* nav        */
+
+.nav {
+    
+    background-color: var(--content-main-color);
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5rem ;
+    font-family: var(--second-font);
+    z-index: 50;
+}
+
+.nav ul {
+    width: 30%;
+}
+
+.nav  ul li {
+    display: inline-block;
+    margin-left: 1.5rem;
+    position: relative;
+}
+
+.nav ul li a {
+    color:var(--all-color) ;
+    transition: color .5s;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 500;
+
+}
+
+.nav ul li a:hover {
+    color: var(--main-color);
+}
+
+.nav ul li  span {
+    width: 0;
+    height: 2px;
+    background-color: var(--box-mcolor);
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    transition: .5s .2s;
+}
+
+.nav ul .lab-4 {
+    opacity: 0;
+}
+
+.nav ul li a:hover ~ span {
+    width: 100%;
+}
+
+
+ .logo {
+    cursor: pointer;
+    position: relative;
+
+}
+
+ .logo h1 {
+     text-transform: capitalize;
+     color: var(--main-color);
+}
+
+ .logo::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: var(--box-mcolor);
+    position: absolute;
+    right: -5%;
+    bottom: 20%;
+}
+
+.icon {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.icon .lab-1 , .lab-2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0 1rem;
+}
+
+.icon .lab-3 {
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.icon i {
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.icon input , #ch-3 , #ch-4 {
+    opacity: 0;
+}
+
+.icon .lab-2  {
+    opacity: 0;
+}
+
+
+.mode:checked ~ .lab-1 {
+   opacity: 0;
+}
+
+.mode:checked ~.lab-2 {
+    opacity: 1;
+}
+
+.nav i {
+    cursor: pointer;
+}
+
+
+
+
+
+/* header */
+
+.header {
+    background-color: var(--main-bg);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    /* height: 100vh; */
+    width: 100%;
+    padding-top: 10rem;
+}
+
+.header .content {
+    width: 50%;
+    padding: 6.5rem  0 ;
+
+}
+
+.header .image {
+    width: 30%;
+}
+
+.header .image img {
+    width: 100%;
+    cursor: pointer;
+}
+
+.header .image img:hover {
+     animation-name: trans;
+     animation-duration: .5s;
+     animation-iteration-count: infinite;
+}
+
+
+.header .content h2 {
+    color: var(--main-color);
+    font-family: var(--main-font);
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+}
+
+.header .content p {
+    color: var(--all-color);
+    margin-bottom: 2rem;
+    width: 60%;
+   
+}
+
+
+.header .content .buttons button {
+    border: none;
+    background-color: var(--box-mcolor);
+    color: var(--content-main-color);
+    padding:  1rem  2rem;
+    border-radius:100vh;
+    border-top-left-radius: 0px;
+    text-transform: capitalize;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: var(--second-font);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.header .content .buttons button:hover , .but button:hover {
+    background-color:var(--hover);
+}
+
+.header .content .buttons a {
+    padding: 1rem 1.5rem;
+    border-radius: 100vh;
+
+    
+
+}
+
+
+.header .content .buttons a i {
+    font-size: 1rem;
+    position: relative;
+    color: var(--main-color);
+    cursor: pointer;
+    border-radius : inherit;
+    padding: 1rem 1.3rem;
+    background-image: linear-gradient(to right , var(--box-mcolor) 0% 50% , transparent 50% 100%);
+    z-index: 10;
+    transition: .5s;
+}
+
+.header .content .buttons a i::after {
+     content: "";
+     width: 2.3rem;
+     height: 2.3rem;
+     border-radius: inherit;
+     background-color: var(--content-main-color);
+     position: absolute;
+     left: 50%;
+     top: 50%;
+     transform: translate(-50% , -50%);
+     z-index: -1;
+}
+
+
+.header .content .buttons a span {
+    text-transform: capitalize;
+    font-family: var(--second-font);
+    font-weight: 400;
+    color: var(--main-color);
+    cursor: pointer;
+    transition: .5s;
+}
+
+
+.header .content .buttons a:hover span ,
+.header .content .buttons a:hover i  {
+     color: var(--hover);
+}
+
+
+/* section-1 */
+
+.section-1 {
+    padding: 5rem 0;
+    width: 100%;
+    background-color: var(--content-main-color);
+
+}
+
+.section-1 .boxs {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.section-1 .boxs .box-one {
+    width: 25%;
+    background-color: var(--main-bg);
+    color: var(--main-color);
+    border-radius: 5% ;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .8);
+    transition: .5s;
+    font-family: var(--second-font);
+    position: relative;
+    overflow: hidden;
+}
+
+.section-1 .boxs .box-one .image {
+    width: 100%;
+    border-radius: 5%;
+}
+
+.section-1 .boxs .box-one .image img {
+    width: 100%;
+    border-radius: 5% 5% 0 0;
+}
+
+.section-1 .boxs .box-one:hover {
+    transform: scale(1.1);
+}
+
+
+.section-1 .boxs .box-one .content {
+    padding: 2rem .5rem;
+    text-align: center;
+}
+
+.section-1 .boxs .box-one .content h4 {
+    padding-bottom: 1rem;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.section-1 .boxs .box-one .content h5 {
+    padding-bottom: 1rem;
+}
+
+.section-1 .boxs .box-one .content p {
+    color: var(--all-color);
+}
+
+.section-1 .icon-hov {
+    background-color: rgba(100%, 100%, 100%, .5);
+    width: fit-content;
+    border-radius: 10px;
+    padding: .5rem 1rem;
+    position: absolute;
+    top: 5px;
+    right: -100px;
+    transition: .5s .5s;
+}
+
+
+.section-1 .boxs .box-one:hover  .icon-hov {
+     right: 10px;
+}
+
+.section-1 .icon-hov ul li {
+    padding-bottom: 1rem;
+}
+
+.section-1 .icon-hov ul li a {
+    color: var(--all-color);
+    transition: .5s;
+}
+
+.section-1 .icon-hov ul li a:hover {
+    color: black;
+}
+
+
+/* section-2 */
+
+
+.section-2{
+    background-color: var(--main-bg);
+    padding: 3rem ;
+   
+}
+
+.section-2 .image {
+    display: inline-flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 1300px;
+    align-content: flex-start;
+    
+}
+.section-2 .image .imag-1 {
+    width: 30%;
+    margin: .5rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-2 .image .imag-1 img {
+    width: 100%;
+}
+
+
+.section-2 .image .imag-1 .cont-image  {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    position: absolute;
+    left: 0;
+    bottom: -100%;
+    z-index: 10;
+    color: #fff;
+    line-height: 1.7;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: var(--second-font);
+    transition: .5s;
+}
+
+.section-2 .image .imag-1:hover .cont-image  {
+     bottom: 0;
+}
+
+.section-2 .image .imag-1 .cont-image h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.section-2 .image .imag-1 .cont-image p {
+    width: 90%;
+    font-weight: 200;
+}
+
+
+
+
+
+@media screen and (max-width:1400px){
+    .section-2 .image {
+        height: 1100px;
+    }
+}
+
+
+@media screen and (max-width:1200px) {
+    .section-2 .image {
+        height: 1000px;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .section-2 .image {
+        height: 800px;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+    .section-2 .image {
+        height: 1200px;
+    }
+
+    .section-2 .image .imag-1 {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width:600px) {
+
+    .section-2 .image .imag-1 {
+            width: 100%;
+        }
+            .section-2 .image {
+        height: auto;
+    }
+
+    .section-2  {
+        padding: .5rem;
+    }
+    
+    .section-2 .image .imag-1 .cont-image h4{
+        font-size: 1.2rem;
+    }
+
+    .section-2 .image .imag-1 .cont-image p {
+        font-size: .7rem;
+    }
+    
+}
+
+
+/* section-3 */
+
+.section-3 {
+    background-color: var(--content-main-color);
+    padding: 2rem;
+    font-family: var(--second-font);
+}
+
+.contact-detail {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contact-detail .contact-1 {
+    width: 40%;
+    background-color: var(--main-bg);
+    margin: .5rem;
+    color: var(--main-color);
+    padding: 1rem ;
+    display: flex;
+    align-items: center;
+}
+
+.contact-detail .contact-1 .ico-cont {
+    background-color: var(--box-mcolor);
+    padding: 1rem ;
+    border-radius: 50%;
+    margin-right: .7rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contact-detail .contact-1 .cont-contact h4 {
+    color: var(--all-color);
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 700;
+
+}
+
+.contact-detail .contact-1 .cont-contact {
+    width: 90%;
+}
+
+.contact-detail .contact-1 .cont-contact span {
+    display: block;
+
+}
+
+
+.section-3 form {
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center; */
+    width: 80%;
+    box-shadow: 0 0 6px var(--all-color);
+    margin: 1rem auto;
+}
+
+.section-3 form .info {
+    width: 49%;
+    background-color: var(--content-main-color);
+    padding: 1.5rem ;
+
+}
+
+.section-3 form .info input {
+    width: 100%;
+    padding: 1rem ;
+    border: 2px solid var(--all-color);
+    outline: none;
+}
+
+.section-3 form .info input:focus {
+    border-color: var(--box-mcolor);
+}
+
+.section-3 form .info:nth-child(3) , .section-3 form .info:nth-child(4)  {
+    width: 98%;
+}
+
+
+
+.but {
+    margin:  2rem auto;
+}
+
+
+.but button {
+    padding: 1rem 2rem;
+    border-radius: 100vh;
+    border: none;
+    background-color: var(--box-mcolor);
+    color: var(--content-main-color);
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: .5s;
+}
+
+
+/* footer */
+
+.footer {
+    display: flex;
+    background-image: url(../images/textured-metal-background.jpg);
+    padding: 2rem;
+    background-position: center;
+    background-size: cover;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--second-font);
+    flex-wrap: wrap;
+}
+
+.footer .about {
+    width: 20%;
+}
+
+.footer .about .image {
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+
+.footer .about .image img {
+    width: 80%;
+    padding-right: .3rem;
+}
+
+.footer .about .first{
+    padding: .5rem .3rem;
+    text-transform: capitalize;
+    line-height: 1.7;
+}
+
+.footer .about .icon-foot p {
+    text-align: center;
+    margin-right: .5rem;
+    padding: .5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    border-bottom: 2px solid var(--all-color);
+}
+
+.footer .about .icon-foot ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+}
+
+.footer .about .icon-foot ul li a {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.footer .subscribe {
+    width: 40%;
+}
+
+.footer .subscribe h4 {
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: .5rem;
+}
+
+.footer .subscribe p {
+    line-height: 1.6;
+    padding: .5rem;
+}
+
+.footer .subscribe .button-foot  {
+    
+    padding: .5rem;
+}
+
+.footer .subscribe .button-foot input {
+    width: 60%;
+    padding: .8rem;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+}
+
+.footer .subscribe .button-foot button {
+     width: 30%;
+    border: none;
+    outline: none;
+    text-transform: capitalize;
+    background-color: var(--box-mcolor);
+    color: var(--content-main-color);
+    padding: .8rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.footer .subscribe .sub-icon ul {
+    padding: .5rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer .subscribe .sub-icon ul li {
+    width: 45%;
+    padding-bottom: .5rem;
+}
+
+.footer .subscribe .sub-icon ul li a {
+    color: #fff;
+    transition: .5s;
+    width: 90%;
+    display: inline-block;
+    padding: .3rem;
+}
+
+.footer .subscribe .sub-icon ul li a:hover {
+   background-color: #5f5e5e;
+   transform: translateX(10px);
+}
+
+
+.footer .address {
+    width: 20%;
+    padding: .5rem;
+
+}
+
+.footer .address h4 {
+    text-transform: capitalize;
+    font-size: 2rem;
+    font-weight: 700;
+    padding-bottom: .8rem;
+}
+
+.footer .address ul li {
+    padding-bottom: 1rem;
+    
+}
+
+.footer .address ul li a{
+    color: var(--box-mcolor);
+    font-size: 1.2rem; 
+  
+}
+
+
+.footer .address ul li span{
+   width: 90%;
+   display: inline-block;
+   padding-left: .5rem;
+
+}
+
+
+ .footer .logo h1 {
+    color: #fff;
+ }
+
+
+@media screen and (max-width:1300px) {
+
+
+    .nav .icon .lab-3 {
+        opacity: 1;
+    }
+
+    .nav ul {
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color: #fff;
+        height: 100%;
+        z-index: 100;
+        padding-top: 3rem;
+        width: 0;
+        box-shadow: 0 0 3px rgba(0, 0, 0, .5);
+        transition: .5s;
+        
+    }
+
+    .nav ul li {
+        width: fit-content;
+        display: block;
+        margin-bottom: 2rem ;
+
+    }
+
+
+   #ch-3:checked ~ ul {
+        width: 30%;
+    }
+
+   #ch-3:checked ~ ul .lab-4 {
+    opacity: 1;
+   }
+
+    .lab-4 {
+        position: relative;
+        left: 80%;
+        transition: .3s;
+        
+    }
+
+    .lab-4  i {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        justify-content: space-around;
+    }
+
+
+.footer .subscribe {
+    width: 90%;
+    order: 5;
+    margin-top: .5rem;
+}
+
+
+ .footer .about , .footer .address {
+    width: 40%;
+ }
+}
+
+
+
+
+
+@media screen and (max-width:992px){
+
+
+    .header {
+        flex-direction: column-reverse;
+    }
+
+    .header .content {
+        width: 100%;
+        text-align: center;
+    }
+
+    .header .content p {
+        margin: auto;
+    }
+
+   .header .content h2 {
+    margin-top: 1rem;
+   }
+
+     .header  .image {
+        width: 80%;
+     }
+
+  .header .content .buttons button {
+    border-radius: 100vh;
+  }
+
+     .header .content .buttons {
+        margin-top: 3rem;
+        padding: 0;
+        width: 100%;
+     }
+     
+
+     .section-1 .boxs {
+        justify-content: flex-start ;
+      }
+       .section-1 .boxs .box-one {
+        width: 40%;
+        margin: 3rem 2rem ;
+         
+     }
+
+     .section-3 form .info {
+        width: 98%;
+     }
+    
+      
+}
+
+
+
+@media screen and (max-width:768px)
+
+{
+
+    .section-1 .boxs {
+            justify-content: space-around;
+        }
+    .section-1 .boxs .box-one {
+            width: 80%;
+    
+        }
+
+    .contact-detail .contact-1
+    {
+        width: 90%;
+    }
+
+
+
+   .footer .address {
+      
+       order: 7;
+       
+   }
+
+
+   .footer .about,
+   .footer .address {
+       width: 90%;
+   }
+
+}
+
+
+
+@media screen and (max-width:600px)
+
+{
+
+    .nav { 
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .nav .logo h1 {
+        font-size: 1.5rem;
+    }
+    #ch-3:checked~ul {
+        width: 40%;
+    }
+
+
+
+
+    .section-2 .image .imag-1 {
+        width: 80%;
+    }
+
+
+
+
+    .section-3 {
+        padding: .5rem;
+    }
+
+
+
+    .contact-detail .contact-1 {
+        width: 100%;
+        padding: 1rem ;
+    }
+
+   .contact-detail .contact-1 .cont-contact p {
+    font-size: .8rem;
+    width: 100%;
+   } 
+
+    .contact-detail .contact-1 .cont-contact h4 {
+        font-size: .8rem;
+    }
+
+    .contact-detail .contact-1 .cont-contact {
+        width: 100%;
+    }
+
+    .contact-detail .contact-1 .ico-cont {
+        padding: .5rem;
+    }
+
+
+    .section-3 form .info {
+        width: 100%;
+    }
+
+    .section-3 form .info:last-child,
+    .section-3 form .info:nth-child(3) {
+        width: 100%;
+    }
+
+    .footer .subscribe .button-foot input ,
+        .footer .subscribe .button-foot button {
+            width: 100%;
+            margin-top: .5rem;
+        }
+}
+
+
+
+@media screen and (max-width:450px)
+
+{
+    .content .buttons a {
+        display: block;
+        margin-top: 1rem;
+    }
+
+    .header .content p{
+        width: 90%;
+    }
+
+    .section-1 .boxs .box-one {
+        width: 100%;
+
+    }
+ h3
+  {
+    font-size: 2rem;
+  }
+
+  .section-3 form {
+    width: 98%;
+  }
+
+
+   .footer {
+    padding: 1rem 0;
+   }
+
+   .footer .address ul li span {
+     font-size: .8rem;
+   }
+
+   .footer .address ul li a i {
+    font-size: 1rem;
+   }
+   
+}
+
+
+
+
+@keyframes trans {
+    0% {
+        transform: translateX(1px) rotate(0deg);
+    }
+
+    10% {
+        transform: translateX(2px, 1px) rotate(-1deg);
+    }
+
+    20% {
+        transform: translateX(-1px, 2px) rotate(1deg);
+    }
+
+    30% {
+        transform: translateX(-1px, -1px) rotate(0deg);
+    }
+
+    40% {
+        transform: translateX(-1px) rotate(-1deg);
+    }
+
+    50% {
+        transform: translateX(0) rotate(1deg);
+    }
+
+    60% {
+        transform: translateX(2px, 1px) rotate(0deg);
+    }
+
+    70% {
+        transform: translateX(-1px, 2px) rotate(-1deg);
+    }
+
+    80% {
+        transform: translateX(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+        transform: translateX(-1px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateX(0) rotate(-1deg);
+    }
+
+
+
+
+}
